@@ -32,7 +32,7 @@ make download-conceptnet
 ./easy-conceptnet index conceptnet-assertions-5.7.0.csv
 ```
 
-It takes a couple of hours to index the whole file, please be patient.
+It takes a couple of hours to index the whole file, please be patient!
 
 ## Documentation
 
