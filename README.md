@@ -28,7 +28,6 @@ available.
 ```
 git clone https://github.com/amirouche/easy-conceptnet/
 cd easy-conceptnet
-make download-conceptnet
 ./easy-conceptnet index conceptnet-assertions-5.7.0.csv
 ```
 
@@ -40,21 +39,26 @@ It takes a couple of hours to index the whole file, please be patient!
 
 Display a banner with the version number
 
-### `GET /api/c/{{ lang }}/{{ label }}`
+### `GET /api/lookup/c/{{ lang }}/{{ label }}`
 
-Retrieve all the relations of the concept that is named `/c/{{ lang
-}}/{{ label }}`. For instance, you can try the following:
-
-```
-curl http://127.0.0.1:8000/api/c/fr/concept`.
-```
-
-### `GET /api/fuzzy-search/{{ label }}`
-
-Try to match `label` with a known concept.
-
-For instance, you can try the following:
+Retrieve all the relations where the given concept that is named
+`/c/{{ lang }}/{{ label }}` is the source. For instance, you can try
+the following:
 
 ```
-curl http://127.0.0.1/api/fuzzy-search/concpt
+curl http://127.0.0.1:8000/api/lookup/c/fr/concept`.
 ```
+
+It will return tab-separated values (tsv).
+
+### `GET /api/reverse/c/{{ lang }}/{{ label }}`
+
+Retrieve all the relations where the given concept that is named
+`/c/{{ lang }}/{{ label }}` is the target. For instance, you can try
+the following:
+
+```
+curl http://127.0.0.1:8000/api/reverse/c/fr/concept`.
+```
+
+It will return tab-separated values (tsv).
