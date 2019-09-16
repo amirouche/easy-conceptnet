@@ -17,7 +17,7 @@ make database-download
 In another console try:
 
 ```
-curl http://127.0.0.1:8888/api/
+curl http://127.0.0.1:8888/api
 ```
 
 Look at the last section of this file to know which routes are
